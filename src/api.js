@@ -7,12 +7,12 @@ const getDate = () => {
   return date;
 };
 
-currentDate = getDate();
+const currentDate = getDate();
 console.log(currentDate);
-lastYear = currentDate.slice(0, 4) - 1;
-nextYear = currentDate.slice(0, 4) + 1;
+const lastYear = currentDate.slice(0, 4) - 1;
+const nextYear = currentDate.slice(0, 4) + 1;
 
 // Popular Games
-const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const popular_games = `games?key=${process.env.REACT_APP_RAWG_API}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
 
 export const popularGamesURL = () => `${base_url}${popular_games}`;
